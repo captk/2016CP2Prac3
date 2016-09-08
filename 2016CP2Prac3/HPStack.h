@@ -18,12 +18,13 @@ class HPStack {
 public:
     HPStack();
     HPStack(const HPStack& orig);
-    void push(int a);
-    int pop();
-    int peek();
+    void push(double a);
+    double pop();
+    double peek();
     virtual ~HPStack();
+    void show();
 private:
-    int stack[4];
+    double stack[4];
 };
 
 #endif /* HPSTACK_H */

@@ -12,6 +12,8 @@
  */
 
 #include "HPStack.h"
+#include <iostream>
+using namespace std;
 
 HPStack::HPStack() {
     for(int i = 0; i < 4; i++){
@@ -25,14 +27,28 @@ HPStack::HPStack(const HPStack& orig) {
 HPStack::~HPStack() {
 }
 
-HPStack::push(int a){
-    
+void HPStack::push(double a){
+    for (int i = 3; i > 0; i--){
+        stack[i] = stack[i-1];
+    }
+    stack[0] = a;
 }
 
-HPStack::pop(){
-    
+double HPStack::pop(){
+    double x = stack[0];
+    for (int i = 0; i < 3; i++){
+        stack[i] = stack[i+1];
+    }
+    return x;
 }
 
-HPStack::peek(){
+double HPStack::peek(){
     return stack[0];
+}
+
+void HPStack::show(){
+    for (int i = 0; i < 4; i++){
+        cout << stack[i] << " ";
+    }
+    cout << endl;
 }
