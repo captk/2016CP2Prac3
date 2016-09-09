@@ -94,21 +94,19 @@ int main(int argc, char** argv) {
             } else if (token == "sto") {
                 mem.push(stack.peek());
             } else if (token == "rcl") {
-                stack.push(mem.pop());
+                stack.push(mem.peek());
             } else if (token == "clr") {
                 for (int i = 0; i < 4; i++) {
                     stack.push(0.0);
                 }
             } else if (token == "clx") {
                 double x = stack.pop();
-            } 
-            else if (token == "swap"){
+            } else if (token == "swap") {
                 double x = stack.pop();
                 double y = stack.pop();
                 stack.push(x);
                 stack.push(y);
-            }
-            else if(token == "roll"){
+            } else if (token == "roll") {
                 double x = stack.pop();
                 double y = stack.pop();
                 double z = stack.pop();
@@ -117,10 +115,9 @@ int main(int argc, char** argv) {
                 stack.push(t);
                 stack.push(z);
                 stack.push(y);
-            }else if (token == "enter"){
+            } else if (token == "enter") {
                 stack.push(stack.peek());
-            }
-            else if (token == "+") { //other arithmetic ops similar
+            } else if (token == "+") { //other arithmetic ops similar
                 //cout << "you pressed +" << endl;
                 //stack.show();
                 double x = stack.pop();
